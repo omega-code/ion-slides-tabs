@@ -69,12 +69,11 @@ var slidingTabsDirective = angular.module("ionic").directive('ionSlidesTabs', ['
             };
 
             var addEvents = function() {
-                ionic.onGesture("release", scope.onSlideChange ,slider[0]);
                 scope.$on("$ionicSlides.sliderInitialized", function(event, data){
                     ionicSlideBoxDelegate = data.slider;
                     ionicSlideBoxDelegate.on('sliderMove', scope.onSlideMove);
+                    ionicSlideBoxDelegate.on('onSlideChangeStart', scope.onSlideChange);
                 });
-                scope.$on("$ionicSlides.sliderInitialized" );
             }
 
             var setTabBarWidth = function() {
