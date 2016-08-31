@@ -135,32 +135,26 @@ var slidingTabsDirective = angular.module("ionic").directive('ionSlidesTabs', ['
             }
 
             var slideToCurrentPosition = function() {
-
-                if( !angular.isDefined(slideTabs) || slideTabs.length == 0 ) {
+                if( !angular.isDefined(slideTabs) || slideTabs.length === 0 ) {
                     return false;
                 }
-
                 var targetSlideIndex = ionicSlideBoxDelegate.activeIndex;
-
                 var targetTab = angular.element(slideTabs[targetSlideIndex]);
                 var targetLeftOffset = targetTab.prop("offsetLeft");
                 var targetWidth = targetTab[0].offsetWidth;
-
                 indicator.css({
                     "-webkit-transition-duration": "300ms",
                     "-webkit-transform":"translate(" + targetLeftOffset + "px,0px)",
                     "width": targetWidth + "px"
                 });
-
                 if (options.slideTabsScrollable && ionicScrollDelegate) {
-                    var scrollOffset = 40;
+                    var scrollOffset = Math.round((targetTab.parent().parent().parent()[0].offsetWidth/2) - (targetWidth/2));
                     ionicScrollDelegate.scrollTo(targetLeftOffset - scrollOffset,0,true);
                 }
-
                 slideTabs.removeClass("tab-active");
                 targetTab.addClass("tab-active");
 
-            }
+            };
 
 
             var setIndicatorPosition = function (currentSlideIndex, targetSlideIndex, position, slideDirection) {
