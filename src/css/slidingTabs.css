@@ -15,6 +15,11 @@ ion-slide:nth-child(2n) {
     z-index: 10;
 }
 
+.slidingTabs.scroll-view.scroll-x {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 .slidingTabs .scroll {
     height: auto;
     min-width: 100%;
