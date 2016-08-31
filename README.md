@@ -11,7 +11,7 @@ This Directive adds Tabs for the Ionic Slidebox with moving indicator at the bot
 
 [Demo 1](https://leoruhland.github.io/ion-slides-tabs/example/example1.html)
 
-[Demo 2](https://leoruhland.github.io/ion-slides-tabs/example/example1.html)
+[Demo 2](https://leoruhland.github.io/ion-slides-tabs/example/example2.html)
 
 ## Installation
 
