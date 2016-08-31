@@ -1,7 +1,7 @@
 # ion-slides-tabs
 
-This fork is an adaptation of the [JKnorr91 code](https://github.com/JKnorr91/ion-slide-box-tabs).
-All credits and thanks to him.
+This fork is an adaptation of the [JKnorr91 code](https://github.com/JKnorr91/ion-slide-box-tabs) using the new directive [ion-slides](http://ionicframework.com/docs/api/directive/ionSlides) instead of [ion-slide-box](http://ionicframework.com/docs/api/directive/ionSlideBox).
+All credits and thanks to [JKnorr91](https://github.com/JKnorr91).
 
 This Directive adds Tabs for the Ionic Slidebox with moving indicator at the bottom.
 
