@@ -15,9 +15,14 @@ ion-slide:nth-child(2n) {
     z-index: 10;
 }
 
-.slidingTabs.scroll-view.scroll-x {
+.platform-browser .slidingTabs.scroll-view.scroll-x {
     overflow-x: hidden;
     overflow-y: hidden;
+}
+
+.platform-browser .scroll-view.scroll-y {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
 }
 
 .slidingTabs .scroll {
