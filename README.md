@@ -15,6 +15,8 @@ This Directive adds Tabs for the Ionic Slidebox with moving indicator at the bot
 
 [Example 3: Multiple dynamic tabs, scrollable](https://leoruhland.github.io/ion-slides-tabs/example/example3.html)
 
+[Example 4: Initial slide](https://leoruhland.github.io/ion-slides-tabs/example/example4.html)
+
 ## Installation
 
 1. Add the *slidingTabsDirective.js* to your Ionic Project and include it in your *index.html*.

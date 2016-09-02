@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>ion-slides-tabs</title>
+
+    <link href="https://code.ionicframework.com/1.3.1/css/ionic.min.css" rel="stylesheet">
+    <link href="../src/css/slidingTabs.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="https://code.ionicframework.com/1.3.1/js/ionic.bundle.min.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="../src/js/slidingTabsDirective.js"></script>
+
+    <script>
+        var app = angular.module('starter', ['ionic']);
+
+        app.config(function($stateProvider, $urlRouterProvider) {
+            $stateProvider.state('index', {
+                url : '/',
+                templateUrl : 'index.html',
+                controller : 'MainController'
+            });
+
+            $urlRouterProvider.otherwise("/");
+        });
+
+        app.controller("MainController", function($scope){
+
+            $scope.options = {
+                initialSlide: 3
+            };
+
+        });
+    </script>
+</head>
+
+<body ng-app="starter">
+
+<ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+</ion-nav-bar>
+
+
+<ion-nav-view ng-controller="MainController"></ion-nav-view>
+
+<script id="index.html" type="text/ng-template">
+    <ion-view view-title="Initial slide">
+        <ion-content scroll="false">
+            <ion-slides slider="slider" options="options" ion-slides-tabs slide-tabs-scrollable="true">
+                <ion-slide-page ion-slide-tab-label="tab"><h1>Tab 1</h1></ion-slide-page>
+                <ion-slide-page ion-slide-tab-label="another tab"><h1>Tab 2</h1></ion-slide-page>
+                <ion-slide-page ion-slide-tab-label="tab3"><h1>Tab 3</h1></ion-slide-page>
+                <ion-slide-page ion-slide-tab-label="initial tab"><h1>Tab 4</h1></ion-slide-page>
+                <ion-slide-page ion-slide-tab-label="another tab again"><h1>Tab 5</h1></ion-slide-page>
+                <ion-slide-page ion-slide-tab-label="a very large tab"><h1>Tab 6</h1></ion-slide-page>
+                <ion-slide-page ion-slide-tab-label="tab7"><h1>Tab 7</h1></ion-slide-page>
+            </ion-slides>
+        </ion-content>
+    </ion-view>
+</script>
+</body>
+</html>
