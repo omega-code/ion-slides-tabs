@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>ion-slides-tabs</title>
+
+    <link href="https://code.ionicframework.com/1.3.1/css/ionic.min.css" rel="stylesheet">
+    <link href="../src/css/slidingTabs.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="https://code.ionicframework.com/1.3.1/js/ionic.bundle.min.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="../src/js/slidingTabsDirective.js"></script>
+
+    <script>
+    var app = angular.module('starter', ['ionic']);
+
+    app.config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider.state('index', {
+            url : '/',
+            templateUrl : 'index.html',
+            controller : 'MainController'
+        });
+
+        $urlRouterProvider.otherwise("/");
+    });
+
+    app.controller("MainController", function($scope){
+
+        $scope.tabsArray = [
+            {title: 'First Tab', content: '<h1>Tab 1</h1>'},
+            {title: '2', content: '<h1>Tab 2</h1>'},
+            {title: 'A really long title', content: '<h1>Tab 3</h1>'},
+            {title: 'Tab 4', content: '<h1>Tab 4</h1>'},
+            {title: 'Tab 5', content: '<h1>Tab 5</h1>'},
+            {title: 'Tab 6', content: '<h1>Tab 6</h1>'},
+            {title: 'Tab 7', content: '<h1>Tab 7</h1>'},
+            {title: 'Tab 8', content: '<h1>Tab 8</h1>'},
+            {title: 'Tab 9', content: '<h1>Tab 9</h1>'},
+            {title: 'Last one', content: '<h1>Tab 10</h1>'}
+        ];
+
+    });
+
+    </script>
+</head>
+
+<body ng-app="starter">
+
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view  ng-controller="MainController"></ion-nav-view>
+
+    <script id="index.html" type="text/ng-template">
+        <ion-view view-title="Multiple dynamic tabs, scrollable">
+            <ion-content scroll="false">
+                <ion-slides slider="slider" ion-slides-tabs slide-tabs-scrollable="true">
+                    <ion-slide-page ng-repeat="eachTab in tabsArray track by $index" ion-slide-tab-label="{{eachTab.title}}" ng-bind-html="eachTab.content"></ion-slide-page>
+                </ion-slides>
+            </ion-content>
+        </ion-view>
+    </script>
+
+</body>
+</html>
