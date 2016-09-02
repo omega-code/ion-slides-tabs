@@ -57,6 +57,7 @@
                         ionicSlideBoxDelegate = data.slider;
                         ionicSlideBoxDelegate.on('sliderMove', scope.onSlideMove);
                         ionicSlideBoxDelegate.on('onSlideChangeStart', scope.onSlideChange);
+                        angular.element(window).on('resize', scope.onResize);
                     });
                 }
 
@@ -170,6 +171,10 @@
                         slideToCurrentPosition();
                         setTabBarWidth()
                     })
+                }
+
+                scope.onResize = function(){
+                    slideToCurrentPosition();
                 }
 
                 scope.onSlideChange = function (slideIndex) {
