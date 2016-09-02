@@ -5,13 +5,15 @@ All credits and thanks to [JKnorr91](https://github.com/JKnorr91).
 
 This Directive adds Tabs for the Ionic Slidebox with moving indicator at the bottom.
 
-## Preview & Demo
+## Preview & Demos
 
 ![alt tag](/example/img/slideTabs.gif)
 
-[Demo 1](https://leoruhland.github.io/ion-slides-tabs/example/example1.html)
+[Example 1: Simple, fixed sizes](https://leoruhland.github.io/ion-slides-tabs/example/example1.html)
 
-[Demo 2](https://leoruhland.github.io/ion-slides-tabs/example/example2.html)
+[Example 2: Multiple tabs, scrollable](https://leoruhland.github.io/ion-slides-tabs/example/example2.html)
+
+[Example 3: Multiple dynamic tabs, scrollable](https://leoruhland.github.io/ion-slides-tabs/example/example3.html)
 
 ## Installation
 
