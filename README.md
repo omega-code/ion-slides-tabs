@@ -1,5 +1,5 @@
 # ion-slides-tabs
-
+Second fork from [Rakonda] (https://github.com/Rakonda/ion-slides-tabs). Add support for on-slide-changed attribute. onSlideChanged expression is called when seected tab is changed.
 This fork is an adaptation of the [JKnorr91 code](https://github.com/JKnorr91/ion-slide-box-tabs) using the new directive [ion-slides](http://ionicframework.com/docs/api/directive/ionSlides) instead of [ion-slide-box](http://ionicframework.com/docs/api/directive/ionSlideBox).
 
 All credits and thanks to [JKnorr91](https://github.com/JKnorr91).
@@ -45,7 +45,7 @@ To name the Tabs you should add the Attribute *ion-slide-tab-label="yourLabel"* 
 Example:
 ```html
 <ion-content scroll="false">
-    <ion-slides slider="slider" ion-slides-tabs>
+    <ion-slides slider="slider" ion-slides-tabs on-slide-changed="selectedPostChanged(index)">
         <ion-slide-page ion-slide-tab-label="test"><h1>Tab 1</h1></ion-slide-page>
         <ion-slide-page ion-slide-tab-label="secondTest"><h1>Tab 2</h1></ion-slide-page>
         <ion-slide-page ion-slide-tab-label="<b>boldTest</b>"><h1>Tab 3</h1></ion-slide-page>
