@@ -5,7 +5,7 @@
     angular
     .module('ionic')
 
-    .directive('ionSlidesTabs', ['$timeout', '$compile', '$interval', '$ionicSlideBoxDelegate', '$ionicScrollDelegate', '$ionicGesture', function($timeout, $compile, $interval, $ionicSlideBoxDelegate, $ionicScrollDelegate, $ionicGesture) {
+    .directive('ionSlidesTabs', ['$timeout', '$compile', '$interval', '$ionicSlideBoxDelegate', '$ionicScrollDelegate', '$ionicGesture', '$parse', function($timeout, $compile, $interval, $ionicSlideBoxDelegate, $ionicScrollDelegate, $ionicGesture, $parse) {
         return {
             require: "^ionSlides",
             restrict: 'A',
@@ -21,8 +21,11 @@
                 var options = {
                     "slideTabsScrollable": true
                 }
-
-                var init = function () {
+				var slideChangeHandler = $parse(attrs.onSlideChanged);
+				
+				var init = function () {
+					 
+					 
                     if(angular.isDefined( attrs.slideTabsScrollable ) && attrs.slideTabsScrollable === "false" ) {
                         options.slideTabsScrollable = false;
                     }
@@ -119,6 +122,10 @@
                     }
                     slideTabs.removeClass("tab-active");
                     targetTab.addClass("tab-active");
+					
+					if (slideChangeHandler)
+						slideChangeHandler(scope, {index:targetSlideIndex, item:targetTab});
+						
                 };
 
                 var setIndicatorPosition = function (currentSlideIndex, targetSlideIndex, position, slideDirection) {
